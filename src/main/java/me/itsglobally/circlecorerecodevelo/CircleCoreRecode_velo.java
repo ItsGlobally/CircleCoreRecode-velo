@@ -11,15 +11,11 @@ import com.velocitypowered.api.plugin.annotation.DataDirectory;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import me.itsglobally.circlecorerecodevelo.commands.*;
-import net.kyori.adventure.text.Component;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
-import net.luckperms.api.event.player.PlayerLoginProcessEvent;
-import net.luckperms.api.model.user.User;
 import org.slf4j.Logger;
 
 import java.nio.file.Path;
-import java.util.Optional;
 import java.util.UUID;
 
 @Plugin(
@@ -45,6 +41,11 @@ public class CircleCoreRecode_velo {
                 .plugin(this)
                 .build();
         cm.register(msgm, new Msg(ps));
+        CommandMeta scm = cm.metaBuilder("staffChat")
+                .aliases("sc")
+                .plugin(this)
+                .build();
+        cm.register(scm, new staffChat(ps));
     }
     @Subscribe
     public void onJoin(PostLoginEvent event) {

@@ -1,4 +1,4 @@
-package me.itsglobally.circlecorerecodevelo.commands;
+package me.itsglobally.circlecorerecodevelo;
 
 import java.util.HashMap;
 import java.util.UUID;
