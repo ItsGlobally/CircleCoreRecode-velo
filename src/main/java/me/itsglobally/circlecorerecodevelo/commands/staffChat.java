@@ -30,7 +30,7 @@ public class staffChat implements SimpleCommand {
                 String prefix = data.getPrefix(senderUUID);
 
                 Component c1 = Component.text("Staff Chat ").color(NamedTextColor.AQUA);
-                Component c2 = Component.text(prefix + p.getUsername()).color(NamedTextColor.GRAY);
+                Component c2 = Component.text(prefix + p.getUsername());
                 Component c3 = Component.text(" » " + String.join(" ", args)).color(NamedTextColor.WHITE);
 
                 Component message = c1
